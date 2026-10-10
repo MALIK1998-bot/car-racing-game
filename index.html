@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Racing Game</title>
+<style>
+body{margin:0;background:#101820;color:white;font-family:Arial;text-align:center}
+h1{color:#00e5ff}
+.road{width:260px;height:390px;max-width:85vw;margin:20px auto;background:#444;border:4px solid white;position:relative;overflow:hidden}
+.lines{position:absolute;left:33%;height:100%;border-left:4px dashed white}
+.car{position:absolute;bottom:20px;left:42%;font-size:42px}
+button{padding:14px 20px;margin:5px;border:0;border-radius:10px;background:#00e5ff;font-size:17px}
+</style>
+</head>
+<body>
+<h1>🏁 CAR RACING</h1>
+<p>My First Mobile Game</p>
+<div class="road">
+<div class="lines"></div>
+<div class="car" id="car">🏎️</div>
+</div>
+<button onclick="move(-1)">⬅️ Left</button>
+<button onclick="move(1)">Right ➡️</button>
+<p id="msg">Ready to race?</p>
+<script>
+let lane=1;
+function move(d){
+lane=Math.max(0,Math.min(2,lane+d));
+document.getElementById("car").style.left=["8%","42%","72%"][lane];
+document.getElementById("msg").textContent="Great driving! 🏁";
+}
+</script>
+</body>
+</html>
